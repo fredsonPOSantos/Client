@@ -1,4 +1,4 @@
-const API_URL = '35.160.120.126/api/appointments';'https://d874-45-65-228-95.ngrok-free.app/api/appointments'; 'https://sd1q5dlp-3001.brs.devtunnels.ms/api/appointments';'https://138.204.143.189:8182/api/appointments'; 'https://barbeariagenese.ddns.info:8182/api/appointments' ; 
+const API_URL = 'https://api-agendamento-idb2.onrender.com/api/appointments' ; 
 // Função para fazer login
 async function loginUser(event) {
     event.preventDefault();
