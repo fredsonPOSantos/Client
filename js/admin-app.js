@@ -89,7 +89,7 @@ function validateAppointmentDate(dateTime) {
 document.addEventListener('DOMContentLoaded', loadUsernames);
 async function loadUsernames() {
     try {
-        const response = await fetch('/api/users', {
+        const response = await fetch('/api/Users', {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`
             }
