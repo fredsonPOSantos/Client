@@ -1,4 +1,4 @@
-const API_URL = 'https://api-agendamento-idb2.onrender.com/api/appointments' ; 
+const API_URL = 'https://api-agendamento-idb2.onrender.com:10000/api/appointments' ; 
 // Função para fazer login
 async function loginUser(event) {
     event.preventDefault();
