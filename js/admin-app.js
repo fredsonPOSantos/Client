@@ -86,11 +86,10 @@ function validateAppointmentDate(dateTime) {
     return true;
 }
 //função para preencher a lista de usuario no seletor
-const BACKEND_URL = 'https://api-agendamento-idb2.onrender.com';
 document.addEventListener('DOMContentLoaded', loadUsernames);
 async function loadUsernames() {
-   try {
-        const response = await fetch(`${BACKEND_URL}/api/users`, {
+  try {
+        const response = await fetch('api/users', {
             headers: {
                 'Authorization': `Bearer ${localStorage.getItem('token')}`
             }
