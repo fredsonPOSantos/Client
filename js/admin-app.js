@@ -258,7 +258,7 @@ async function searchAppointmentByUsername() {
 }
 // /client/js/admin-app.js
 async function fetchAnalytics() {
-    const response = await fetch(`https://138.204.143.189:8183/api/reports/analytics`, {
+    const response = await fetch(`https://api-agendamento-idb2.onrender.com/api/reports/analytics`, {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -323,7 +323,7 @@ function initializeCalendar(appointments) {
 }
 async function exportAppointments() {
     try {
-        const response = await fetch(`https://138.204.143.189:8183/api/appointments/export`, {
+        const response = await fetch(`https://api-agendamento-idb2.onrender.com/api/appointments/export`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
