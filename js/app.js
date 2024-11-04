@@ -324,3 +324,4 @@ document.getElementById('logoutButton')?.addEventListener('click', (e) => {
     localStorage.removeItem('loggedUsername');
     window.location.href = 'login.html';
 });
+
