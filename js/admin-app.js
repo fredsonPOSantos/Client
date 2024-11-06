@@ -134,10 +134,9 @@ async function createAppointment() {
     
 
     if (date && time && serviceType && targetUsername) {
-        const dateTime = new Date(`${date}T${time}:00`); // Combina a data e hora
+        const dateTime = new Date(`${date}T${time}:00`).toLocaleString("en-US", { timeZone: "America/Sao_Paulo" });
 
-        
-
+      
         try {
             const response = await fetch(API_URL, {
                 method: 'POST',
