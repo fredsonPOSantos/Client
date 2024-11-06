@@ -64,7 +64,7 @@ function displayAppointments(appointments) {
 
         appointmentDiv.innerHTML = `
             <p><strong>Serviço:</strong> ${appointment.serviceType}</p>
-            <p><strong>Data e Hora:</strong> ${new Date(appointment.dateTime).toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" })}</p>
+            <p><strong>Data e Hora:</strong> ${new Date(appointment.dateTime))}</p>
             <p><strong>Usuário:</strong> ${appointment.username}</p> <!-- Mostra o nome do usuário -->
             <button onclick="editAppointment('${appointment._id}')">Editar</button>
             <button onclick="deleteAppointment('${appointment._id}')">Excluir</button>
