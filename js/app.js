@@ -100,11 +100,18 @@ async function loadAppointments(username) {
             appointmentsDiv.innerHTML = '<p>Você ainda não fez seu Agendamento, Por favor! Agende seu Serviço.</p>';
         } else {
            appointmentsDiv.innerHTML = appointments.map(appointment => {
-                // Converte a data e hora para o formato UTC
-                const appointmentDateUTC = new Date(appointment.dateTime).toISOString().slice(0, 16).replace("T", " ");
+                // Converte a data e hora para o formato brasileiro com "h" e horário UTC
+                const appointmentDate = new Date(appointment.dateTime);
+                const day = appointmentDate.getUTCDate().toString().padStart(2, '0');
+                const month = (appointmentDate.getUTCMonth() + 1).toString().padStart(2, '0');
+                const year = appointmentDate.getUTCFullYear();
+                const hour = appointmentDate.getUTCHours().toString().padStart(2, '0');
+                const minute = appointmentDate.getUTCMinutes().toString().padStart(2, '0');
+                const formattedDateTime = `${day}-${month}-${year} ${hour}:${minute}h`;
+
                 return `
                     <div>
-                        <p>${appointment.serviceType} - ${appointmentDateUTC} UTC</p>
+                        <p>${appointment.serviceType} - ${formattedDateTime} UTC</p>
                         <button onclick="rescheduleAppointment('${appointment._id}')">Remarcar</button>
                         <button onclick="cancelAppointment('${appointment._id}')">Cancelar</button>
                     </div>
