@@ -29,18 +29,6 @@ function logout() {
     localStorage.removeItem('token'); // Remove o token do localStorage
     window.location.href = 'login.html'; // Redireciona para a página de login
 }
-// Função para formatar a data e hora para o fuso horário local
-function formatAppointmentDate(utcDate) {
-    const date = new Date(utcDate);
-    return date.toLocaleString('pt-BR', {
-        timeZone: 'America/Sao_Paulo', // Ajuste para o fuso horário desejado
-        hour: '2-digit',
-        minute: '2-digit',
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric'
-    });
-}
 
 // Função para buscar e exibir todos os agendamentos
 async function fetchAppointments() {
@@ -76,7 +64,7 @@ function displayAppointments(appointments) {
 
         appointmentDiv.innerHTML = `
             <p><strong>Serviço:</strong> ${appointment.serviceType}</p>
-            <p><strong>Data e Hora:</strong> ${formattedDateTime}</p>
+            <p><strong>Data e Hora:</strong> ${new Date(appointment.dateTime).toLocaleString()}</p>
             <p><strong>Usuário:</strong> ${appointment.username}</p> <!-- Mostra o nome do usuário -->
             <button onclick="editAppointment('${appointment._id}')">Editar</button>
             <button onclick="deleteAppointment('${appointment._id}')">Excluir</button>
@@ -134,9 +122,9 @@ async function createAppointment() {
     
 
     if (date && time && serviceType && targetUsername) {
-        const dateTime = new Date(`${date}T${time}:00`).toLocaleString("en-US", { timeZone: "America/Sao_Paulo" });
+        const dateTime = new Date(`${date}T${time}:00`); // Combina a data e hora
 
-      
+     
         try {
             const response = await fetch(API_URL, {
                 method: 'POST',
@@ -161,9 +149,6 @@ async function createAppointment() {
         alert('Data, hora, serviço e nome do usuário são obrigatórios!');
     }
 }
-
-
-
 
 
 // Função para editar um agendamento
@@ -267,7 +252,7 @@ async function searchAppointmentByUsername() {
         alert('Erro ao buscar agendamentos. Por favor, tente novamente.');
     }
 }
-// /client/js/admin-app.js
+
 async function fetchAnalytics() {
     const response = await fetch(`https://api-agendamento-idb2.onrender.com/api/reports/analytics`, {
         method: 'GET',
