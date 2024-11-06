@@ -61,15 +61,24 @@ function displayAppointments(appointments) {
     appointments.forEach(appointment => {
         const appointmentDiv = document.createElement('div');
         appointmentDiv.classList.add('appointment');
+// Converte o horário do agendamento para o horário local do cliente
+const localDateTime = new Intl.DateTimeFormat("pt-BR", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone
+}).format(new Date(appointment.dateTime));
 
-        appointmentDiv.innerHTML = `
-            <p><strong>Serviço:</strong> ${appointment.serviceType}</p>
-            <p><strong>Data e Hora:</strong> ${new Date(appointment.dateTime))}</p>
-            <p><strong>Usuário:</strong> ${appointment.username}</p> <!-- Mostra o nome do usuário -->
-            <button onclick="editAppointment('${appointment._id}')">Editar</button>
-            <button onclick="deleteAppointment('${appointment._id}')">Excluir</button>
-        `;
-
+appointmentDiv.innerHTML = `
+    <p><strong>Serviço:</strong> ${appointment.serviceType}</p>
+    <p><strong>Data e Hora:</strong> ${localDateTime}</p>
+    <p><strong>Usuário:</strong> ${appointment.username}</p> <!-- Mostra o nome do usuário -->
+    <button onclick="editAppointment('${appointment._id}')">Editar</button>
+    <button onclick="deleteAppointment('${appointment._id}')">Excluir</button>
+`;
         appointmentsContainer.appendChild(appointmentDiv);
     });
 }
