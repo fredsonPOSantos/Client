@@ -99,20 +99,23 @@ async function loadAppointments(username) {
         if (appointments.length === 0) {
             appointmentsDiv.innerHTML = '<p>Você ainda não fez seu Agendamento, Por favor! Agende seu Serviço.</p>';
         } else {
-            appointmentsDiv.innerHTML = appointments.map(appointment => `
-                <div>
-                    <p>${appointment.serviceType} - ${new Date(appointment.dateTime).toLocaleString()}</p>
-                    <button onclick="rescheduleAppointment('${appointment._id}')">Remarcar</button>
-                    <button onclick="cancelAppointment('${appointment._id}')">Cancelar</button>
-                </div>
-            `).join('');
+           appointmentsDiv.innerHTML = appointments.map(appointment => {
+                // Converte a data e hora para o formato UTC
+                const appointmentDateUTC = new Date(appointment.dateTime).toISOString().slice(0, 16).replace("T", " ");
+                return `
+                    <div>
+                        <p>${appointment.serviceType} - ${appointmentDateUTC} UTC</p>
+                        <button onclick="rescheduleAppointment('${appointment._id}')">Remarcar</button>
+                        <button onclick="cancelAppointment('${appointment._id}')">Cancelar</button>
+                    </div>
+                `;
+            }).join('');
         }
     } catch (error) {
         console.error('Erro ao carregar os agendamentos:', error);
         alert('Erro ao carregar os agendamentos');
     }
 }
-
 // Registro de usuários
 document.getElementById('registerForm')?.addEventListener('submit', async (e) => {
     e.preventDefault();
