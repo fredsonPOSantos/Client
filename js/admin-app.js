@@ -59,6 +59,7 @@ function displayAppointments(appointments) {
         return;
     }
     appointments.forEach(appointment => {
+        console.log("Data do agendamento no banco:", appointment.dateTime);
         const appointmentDiv = document.createElement('div');
         appointmentDiv.classList.add('appointment');
 // Converte o horário do agendamento para o horário local do cliente
@@ -71,7 +72,7 @@ const localDateTime = new Intl.DateTimeFormat("pt-BR", {
     second: "2-digit",
     timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone
 }).format(new Date(appointment.dateTime));
-
+console.log("Data do agendamento no fuso horário local:", localDateTime);
 appointmentDiv.innerHTML = `
     <p><strong>Serviço:</strong> ${appointment.serviceType}</p>
     <p><strong>Data e Hora:</strong> ${localDateTime}</p>
