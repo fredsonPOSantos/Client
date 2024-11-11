@@ -59,19 +59,17 @@ function displayAppointments(appointments) {
         return;
     }
     appointments.forEach(appointment => {
-        console.log("Data do agendamento no banco:", appointment.dateTime);
         const appointmentDiv = document.createElement('div');
         appointmentDiv.classList.add('appointment');
-// Converte o horário do agendamento para o horário local do cliente
-new Date(new Date(appointment.dateTime).getTime() - new Date().getTimezoneOffset() * 60000).toLocaleString('pt-BR');
-console.log("Data do agendamento no fuso horário local:", localDateTime);
-appointmentDiv.innerHTML = `
-    <p><strong>Serviço:</strong> ${appointment.serviceType}</p>
-    <p><strong>Data e Hora:</strong> ${localDateTime}</p>
-    <p><strong>Usuário:</strong> ${appointment.username}</p> <!-- Mostra o nome do usuário -->
-    <button onclick="editAppointment('${appointment._id}')">Editar</button>
-    <button onclick="deleteAppointment('${appointment._id}')">Excluir</button>
-`;
+
+        appointmentDiv.innerHTML = `
+            <p><strong>Serviço:</strong> ${appointment.serviceType}</p>
+            <p><strong>Data e Hora:</strong> ${new Date(appointment.dateTime).toLocaleString()}</p>
+            <p><strong>Usuário:</strong> ${appointment.username}</p> <!-- Mostra o nome do usuário -->
+            <button onclick="editAppointment('${appointment._id}')">Editar</button>
+            <button onclick="deleteAppointment('${appointment._id}')">Excluir</button>
+        `;
+
         appointmentsContainer.appendChild(appointmentDiv);
     });
 }
