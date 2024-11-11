@@ -113,7 +113,8 @@ async function loadAppointments(username) {
                     <div>
                         <p>${appointment.serviceType} - ${formattedDateTime} UTC</p>
                         <button onclick="rescheduleAppointment('${appointment._id}')">Remarcar</button>
-                        <button onclick="cancelAppointment('${appointment._id}')">Cancelar</button>
+                        <button onclick="cancelAppointment('${appointment._id}')" style="background-color: rgb(112, 22, 22); color: white;">Cancelar</button></div>
+
                     </div>
                 `;
             }).join('');
