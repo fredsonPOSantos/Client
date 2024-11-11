@@ -1,4 +1,308 @@
-body {
+/* RESETS */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Sanchez&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 
-    background-color: bisque;
+:root {
+    --background-color: #f8f4f0; /* Marrom claro, quase branco */
+    --primary-color: #a67d5d; /* Marrom principal */
+    --secondary-color: #3c2f2f; /* Marrom mais escuro */
+    --text-color: #3c3c3c;
+    --button-hover: #8b5e3c;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Sanchez', sans-serif;
+}
+
+body, ul, li, p, footer{
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ 
+}
+
+    
+    html, body{
+        background-color: var(--background-color);
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Sanchez', sans-serif;
+
+    }
+
+    /* Header */
+.header {
+    background-color: var(--primary-color);
+    padding: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+
+.header button {
+    background: none;
+    border: none;
+    color: #0a0a0a;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+
+}
+.header button:hover {
+   
+  transform: scale(1.2); /* Aumenta o tamanho do botão em 10% */
+}
+
+.header button a {
+    color: #f8f4f0;
+    text-decoration: none;
+    transition: color 0.3s;
+    text-transform: uppercase;
+    font-family: "Sanchez", sans-serif;
+}
+
+.header button a:hover {
+    color:  #3c2f2f;
+}
+.main-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form#loginForm {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    font-size: 1rem;
+    
+}
+
+form h1 {
+    font-family: 'Bungee Shade', cursive;
+    color: var(--secondary-color);
+    margin-bottom: 3.5rem;
+    
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+form button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: #f8f4f0;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    transition: transform 0.3s, color 0.3s;
+    text-transform: uppercase;
+    font-family: "Sanchez", sans-serif;
+}
+
+form button:hover {
+    background-color: green;
+    color:  #ffffff;
+    transform: scale(1.1);
+
+}
+   
+
+    .preloader{
+      background-color: #3c2f2f;
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .load-img{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      border-radius: 50%; /* Torna a imagem redonda */
+      object-fit: cover; /* Garante que a imagem preencha o círculo sem distorções */
+      border: 2px solid var(--primary-color); /* Opcional: adiciona uma borda */
+    }
+    .load{
+      width: 320px;
+      height: 320px;
+      border: 10px solid #a67d5d;
+      border-top-color: #f8f4f0;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      to {transform: rotate(360deg)}
+    }
+  
+  .fa-instagram:hover{
+    animation-name: instagram;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  
+  .fa-whatsapp:hover{
+    color: #25D366;
+  }
+  
+  
+  @keyframes instagram {
+    0% {color: #405DE6;}
+    20% {color: #833AB4;}
+    40% {color: #C13584;}
+    60% {color: #E1306C;}
+    80% {color: #F56040;}
+    100% {color: #F77737;}
+  
+  }
+
+.footer{
+display: flex;
+
+}
+
+.footer a, p{
+font-family: Arial, Helvetica, sans-serif;
+font-size: 1rem;
+color: #f8f4f0;
+letter-spacing: 0.8px;
+
+}
+
+.footer h3{
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: 1.1rem;;
+
+}
+#menu-footer{
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  flex-wrap: wrap ;
+  background-color:#a67d5d;
+  width: 100%;
+}
+
+#menu-footer .footer-list-contatos{
+  flex-direction: row ;
+  flex: 0 1 33.33%;
+  align-items: center;
+
+}
+.footer-list-contatos h3{
+  
+  text-align: center;
+}
+
+.footer-list-contatos .footer-link{
+ display: flex;
+ justify-content: center;
+
+}
+.footer-list-serviços{
+
+  flex-direction: row ;
+  flex: 0 1 33.33%;
+  height: 100%;
+}
+
+
+.footer-list-serviços .footer-link, h3{
+  display: flex;
+  justify-content: center;
+  padding: 7px;
+
+}
+
+
+.footer-list-redes{
+  flex-direction: row ;
+  flex: 0 1 33.33%;
+  align-items: center;
+  height: 100%;
+
+}
+.footer-list-redes h3 {
+text-align: center;
+}
+
+.footer-list-redes p {
+  
+font-size: 1rem;
+margin-top: -2px;
+padding: 5px;
+}
+
+#redes-sociais {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 10px;
+  gap: 1rem;
+}
+
+#redes-sociais .fa-whatsapp, #redes-sociais .fa-instagram{
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-size: 50px;
+}
+
+.footer-link, .footer-link-redes a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease; /* Transição suave de cor */
+}
+
+.footer-link:hover, .footer-link-redes a:hover {
+  color: #000000; /* Cor de destaque para o hover */
+}
+.main-login {
+  opacity: 0;
+  transform: translateY(20px); /* Desliza levemente de baixo para cima */
+  transition: opacity 0.5s ease-out, transform 0.8s ease-out;
+}
+
+.main-login.loaded {
+  opacity: 1;
+  transform: translateY(0);
 }
