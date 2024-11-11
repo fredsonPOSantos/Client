@@ -5,21 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/register.css">
     <script src="js/app.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="shortcut icon" href="./imagens/G.png" type="image/x-icon">
+
     <title>Registrar</title>
 </head>
-<header>
-    <button><a href="../index.html">Pagina Inicial</a></button>
+<header class="header">
+    <button><a href="./index.html">Página Inicial</a></button>
     <button><a href="./login.html">Entrar</a></button>
 
 </header>
 <body>
-    <h1>Faça Seu Cadastro!</h1>
-    <form id="registerForm"> <!-- Adicionei o ID aqui -->
-        <input type="text" id="username" placeholder="Nome de Usuário" required>
-        <input type="email" id="email" placeholder="Email" required> <!-- Campo de Email -->
-        <input type="password" id="password" placeholder="Senha" required>
-        <button type="submit">Registrar</button>
-    </form>
+    <main class="main-register">
+        <form id="registerForm">
+            <h1>Faça Seu Cadastro!</h1> <!-- Adicionei o ID aqui -->
+            <input type="text" id="username" placeholder="Nome de Usuário" required>
+            <input type="email" id="email" placeholder="Email" required> <!-- Campo de Email -->
+            <input type="password" id="password" placeholder="Senha" required>
+            <button type="submit">Registrar</button>
+        </form>
+    </main>
+
+
+
+    <footer class="footer">
+
+        <div id="menu-footer">
+           
+                <ul class="footer-list-contatos">
+            
+                    <li><h3>Telefone</h3></li>
+                    <li><a href="#" class="footer-link">(+55) 73991369741</a></li>
+    
+                    <li><h3>Email</h3></li>
+                    <li><a href="#" class="footer-link">contato@barbeariageneses.com</a></li>
+    
+                    <li><h3>Nosso Endereço</h3></li>
+                    <li><a href="#" class="footer-link">Avenida Qualquer, Numero 123, Centro de Gandu-BA</a></li>
+                </ul>
+    
+                <ul class="footer-list-serviços" >
+    
+                    <li><h3>Barbearia Gênese</h3></li>
+                    <li><a href="#" class="footer-link">Outros Serviços</a></li>
+                    <li><a href="#" class="footer-link">Nosso Trabalho</a></li>
+                    <li><a href="#" class="footer-link">Projetos Sociais</a></li>
+    
+                </ul>
+    
+               
+                <ul class="footer-list-redes">
+    
+                    <li><h3>Redes Sociais</h3></li>
+                    
+                    <div id="redes-sociais">
+    
+                        <div id="fa-whatsapp">
+                        <li><p>Whatsapp</p></li>
+                        <li class="footer-link-redes"><a href="https://wa.me//5573991369741" target="_blank" data-anime="left"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></a></li>
+                        </div>    
+                    
+                        <div id="instagram">
+                        <li><p>Instagram</p></li>
+                        <li class="footer-link-redes"><a href="https://www.instagram.com/barbearia_geneses_/" target="_blank" 
+                        data-anime="left"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                        </div>    
+                
+                    </div>
+                </ul> 
+                
+        </div>
+               
+           
+               
+           
+    </footer>    
+        
+        
+        
+        <div id="pre" class="preloader">
+            <img class="load-img" src="./imagens/Gênese teste 2.png" alt="loading">
+            <div id="load" class="load"></div>
+        </div>
+           
+        <script src="./script/script.js"></script>    
+        <script src="./script/main.js"></script> 
+        <script src="./script/register.js"></script> 
+    
+        
+        <script>
+            $(window).on("load", function(){
+              $(".preloader").fadeOut("slow");
+          })
+        </script>
+    
+
 
     <script src="script/register.js"></script>
 </body>
