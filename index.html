@@ -4,62 +4,166 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="shortcut icon" href="./imagens/G.png" type="image/x-icon">
+
+  
     <title>Página Inicial</title>
 </head>
 
-<header>
-    <h1>Barbearia Gênese</h1>
-    <nav>
-        <button><a href="login.html">Entrar</a></button>
-       <button> <a href="register.html">Cadastre-se</a></button>
-    </nav>
 
-</header>
 <body>
     
+    <header>
+
+        <main class="teste-menu" id="teste-menu">
+            
+            <div class="logo-menu">
+                <a href="#"><img src="./imagens/Sem título teste 3.png" class="logotipo" alt="logo"></a>
+              </div>
     
-    <section class="containerproje">
-        <div class="slide-container active">
-            <div class="slide">
-             <div class="contentproje">
-               <h3>Metaverso</h3>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde similique ipsam quibusdam inventore earum, quo assumenda, quam molestiae 
-                   laborum praesentium velit accusantium iure excepturi. Iste dolores id odit veritatis ex?</p>
-               <a href="https://ftd.com.br/" class="bntproj">Saiba mais</a>
-             </div>
-            </div>
-        </div>
+              <section class="link" id="link-agende">
 
-        <div class="slide-container">
-            <div class="slide">
-             <div class="contentproje">
-               <h3>Metaverso</h3>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit aliquid assumenda eaque, inventore 
-                   pariatur molestias hic, aspernatur nihil ipsam eius magni incidunt? Incidunt eveniet non magnam 
-                   reprehenderit beatae doloribus soluta.</p>
-               <a href="https://ftd.com.br/" class="bntproj">Saiba mais</a>
-             </div>
+                <button class="glow-on-hover" type="button"><a href="./login.html">Agende Seu Serviço AQUI!</a></button>
+                
+              </section>
+                   
+            <div class="menu">
+              <ul>
+                <li><a href="login.html">Entrar</a></li>
+                <li><a href="register.html">Cadastre-se</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#presents">Nosso Trabalho</a></li>
+              </ul>
             </div>
-        </div>
-        
-        <div class="slide-container">
-            <div class="slide">
-             <div class="contentproje">
-               <h3>Metaverso</h3>
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi eos, qui obcaecati nulla 
-                aliquid non iure autem, esse aliquam itaque rerum nostrum 
-                repudiandae! At eligendi quas provident omnis voluptatem. Dignissimos..</p>
-               <a href="https://www.escolasconectadas.org.br/cursos" class="bntproj">Saiba mais</a>
-             </div>
-            </div>
-        </div>
+         
+        </main>
+    
+    </header>
+      
+        <section class="icones">
+          <a href="#" target="_blank" 
+          data-anime="left"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://wa.me//5573991369741" target="_blank" data-anime="left"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        </section>
+      
+        <section class="sessao" >
+          <h1 class="cortamos"data-anime="top">Cortamos ao seu gosto!</h1>
+          <p>Nossos horários e preços</p>
+          <h3 data-anime="top"><i class="fas fa-chevron-circle-down" id="servicos"></i></h3>
+        </section>
+      
+        <section class="precos" id="precos">
+          <h1 class="seg" data-anime="top">Seg á Sáb - 7h ás 18h </h1>
+          <h1 class="dom" data-anime="top">Dom - 8h ás 11h</h1>
+          <h3>Siga-nos no <a href="https://www.instagram.com/barbeariagenesis11/" target="_blank">Instagram</a> para informações diárias de nosso funcionamento ou entre em contato pelo <a href="https://wa.me//558195652062" target="_blank">Whatsapp</a> para mais detalhes.</h3>
+          <div class="tebela" data-anime="left">
+            <ul>
+              <h2>Cabelo Social</h2>
+              <p>R$ 25</p>
+            </ul>
+            <ul>
+              <h2>Barba</h2>
+              <p>R$ 15</p>
+            </ul>
+            <ul>
+              <h2>Cabelo e Barba</h2>
+              <p>R$ 45</p>
+            </ul>
+            <ul>
+              <h2>Para Outros Serviços</h2>
+              <p>Entre em Contato</p>
+            </ul>
+          </div>
+          
+        </section>
+      
+        <section class="presents" id="presents">
+          <div class="trabalhos" data-anime="left">
+            <h1>Confira alguns de nossos trabalhos!</h1>
+            <p>* Também trabalhamos com crianças, traga seu filho.</p>
+          </div>
+      
+          <div class="lista" data-anime="right">
+          <ul class="cortes-lista">
+            <li>
+              <img src="./imagens/corte1.webp">
+            </li>
+            <li>
+              <img src="./imagens/corte3.webp">
+            </li>
+            <li>
+              <img src="./imagens/imagem03 (10).jpeg">
+            </li>
+            <li>
+              <img src="./imagens/imagem03 (6).jpeg">
+            </li>
+            <li>
+              <img src="./imagens/corte4.webp">
+            </li>
+            <li>
+              <img src="./imagens/Sem-título-ytansparente.webp">
+            </li>
+            <li>
+              <img src="./imagens/imagem03 (14).jpeg">
+            </li>
+            <li>
+              <img src="./imagens/estilo de barbas.jpg">
+            </li>
+          </ul>
+          </div>
+      
+        </section>
+      
+        <section class="final" id="mapa">
+          <h1 data-anime="left">ESPERAMOS SUA VISITA <i class="fas fa-map-marker-alt" aria-hidden="true"></i></h1>
+          <div><iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d7751.103525857903!2d-39.492534839850336!3d-13.745565981413842!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sGandu%2C%20barbearia%20G%C3%AAnese!5e0!3m2!1spt-BR!2sbr!4v1731278709480!5m2!1spt-BR!2sbr" width="650" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe><hr></div>
+          <p data-anime="right"> | Centro de Gandu | Gandu - BA</p>
+        </section>
 
-        
-        <div id="prev" onclick="prev()"> < </div>
-        <div id="next" onclick="next()"> > </div>
+             
+        <footer class="footer">
+          <div class="local">
+             <a href="https://www.instagram.com/barbeariagenesis11/" target="_blank" 
+              class="insta"><i class="fab fa-instagram" aria-hidden="true"></i> Barbearia Gêneses</a>
+          </div>
 
-    <script src="script/index.js"></script>
+          <p>© Todos os direitos reservados.</p>
+         
+        </footer>
+      
+        <div id="pre" class="preloader">
+          <img class="load-img" src="./imagens/Gênese teste 2.png" alt="loading">
+          <div id="load" class="load"></div>
+        </div>
+      
+       
+    <script src="./script/script.js"></script>    
+    <script src="./script/main.js"></script> 
+    <script src="./script/index.js"></script>
+    <script>
+        $(window).on("load", function(){
+          $(".preloader").fadeOut("slow");
+      })
+    </script>
+    <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/673152e72480f5b4f59b724a/1iccanmbi';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+  </script>
+  <!--End of Tawk.to Script-->
     
 </body>
 </html>
