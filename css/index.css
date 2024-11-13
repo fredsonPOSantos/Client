@@ -3,13 +3,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Sanchez&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
   --background-color: #f8f4f0; /* Marrom claro, quase branco */
   --primary-color: #a67d5d; /* Marrom principal */
   --secondary-color: #3c2f2f; /* Marrom mais escuro */
   --text-color: #3c3c3c;
   --button-hover: #8b5e3c;
-}
+  }
 *{
     padding: 0;
     margin: 0;
@@ -34,7 +36,45 @@
       text-decoration: none;
       color: #f8f4f0;
     }
-    
+    .menu ul li a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: currentColor;
+      transition: width 0.3s ease;
+     }
+    .menu ul li a:hover::after {
+      width: 100%;
+    }
+
+    #header-register {
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      color: #000000;
+      letter-spacing: 1.5px;
+      font-family: "Sour+Gummy", sans-serif;
+      font-style: italic;
+    }
+
+    #header-register:hover {
+      transform: scale(1.2);
+      color: #f8f4f0;;
+    }
+  
+    #header-login {
+      color: rgb(0, 0, 0);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      letter-spacing: 1.5px;
+      font-family: "Sour+Gummy", sans-serif;
+      font-style: italic;
+    }
+    #header-login:hover {
+      transform: scale(1.2);
+      color:#f8f4f0;;
+    }
+
     .preloader{
       background-color: #000000;
       width: 100%;
@@ -56,8 +96,7 @@
       object-fit: cover; /* Garante que a imagem preencha o círculo sem distorções */
       border: 2px solid var(--primary-color); /* Opcional: adiciona uma borda */
     }
-    
-    
+        
     .load{
       width: 320px;
       height: 320px;
@@ -119,7 +158,6 @@
       justify-content: space-around;
     }
 
-    
     .menu ul li a{
       padding: 15px;
       font-size: 1.125em;
@@ -137,8 +175,6 @@
       font-weight: bold;
       text-transform: uppercase;
       font-family: "Sanchez", sans-serif;
-
-
 
     }
     
@@ -189,8 +225,6 @@
       100% {color: #F77737;}
     
     }
-    
-    /* NAVEGAÇÃO */
     
     .sessao{
       width: 100%;
@@ -254,9 +288,7 @@
       text-align: center;
       font-size: 2em;
     }
-    
-    /* PREÇOS */
-    
+         
     .precos{
       max-width: 100%;
       margin: 20px auto;
@@ -298,7 +330,6 @@
       margin: 10px 5px;
       text-shadow: 2px 2px 5px  #a67d5d;
     }
-    
     .precos a{
       font-size: 1em;
       color:#ff7003;
@@ -313,7 +344,6 @@
     }
     .precos a:hover{
       color: #0f12db;
-
 
     }
     .precos h2{
@@ -336,9 +366,7 @@
       padding: 30px;
     
     }
-    
-    /* DIVULGAÇÃO */
-    
+     
     .presents{
       width: 100%;
       display: flex;
@@ -405,9 +433,7 @@
     .cortes-lista::-webkit-scrollbar-track{
       background-color: none;
     }
-    
-    /* MAPA */
-    
+        
     .final{
       height: 500px;
       display: flex;
@@ -440,8 +466,6 @@
     .final hr{
       border: 3px solid #a67d5d;
     }
-    
-    /* FOOTER */
     
     .footer{
       background: url('../images/newback-white.webp') no-repeat;
@@ -500,8 +524,7 @@
       font-size: .8em;
       margin-right: 5px;
     }
-    
-    /* BARRA DE LOADING */
+       
     .pace {
       -webkit-pointer-events: none;
       pointer-events: none;
@@ -539,25 +562,25 @@
       padding: 15px 30px;
       font-size: 1.2rem;
       color: inherit;
-  }
-  .link{
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    position: fixed;
-    top: 150px; /* Limite superior para não cobrir o header */
-    bottom: 100px; /* Limite inferior para não cobrir o footer */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000; /* Garante que o botão fique sobre outros elementos */
-}
-section#link-agende.link{
+      }
+    .link{
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      position: fixed;
+      top: 150px; /* Limite superior para não cobrir o header */
+      bottom: 100px; /* Limite inferior para não cobrir o footer */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000; /* Garante que o botão fique sobre outros elementos */
+      }
+    section#link-agende.link{
 
-  border-radius: 50%;
-}
+      border-radius: 50%;
+    }
 
-  .glow-on-hover:before {
+    .glow-on-hover:before {
       content: '';
       background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
       position: absolute;
@@ -609,8 +632,6 @@ section#link-agende.link{
       50% { background-position: 400% 0; }
       100% { background-position: 0 0; }
   }
-    
-    /* SCROLL ANIMADO */
     
     [data-anime] {
       opacity: 0;
