@@ -48,6 +48,17 @@ async function fetchAppointments() {
         console.error('Erro ao buscar agendamentos:', response.statusText);
     }
 }
+function adjustToBrazilTime(utcDateTime) {
+    const date = new Date(utcDateTime);
+    date.setHours(date.getHours() - date.getTimezoneOffset() / 60 + 3); // Ajusta para UTC-3
+    return date.toLocaleString('pt-BR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+    });
+}
 
 // Função para exibir os agendamentos na tela
 function displayAppointments(appointments) {
@@ -63,23 +74,10 @@ function displayAppointments(appointments) {
         const appointmentDiv = document.createElement('div');
         appointmentDiv.classList.add('appointment');
 
-        // Ajusta a data e hora para o fuso horário de Brasília (UTC-3)
-        const appointmentDate = new Date(appointment.dateTime);
-        appointmentDate.setHours(appointmentDate.getHours() + 3); // Adiciona 3 horas
-
-        // Formata a data e hora no padrão brasileiro
-        const formattedDate = appointmentDate.toLocaleString('pt-BR', {
-            day: '2-digit',
-            month: '2-digit',
-            year: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-        });
-
         appointmentDiv.innerHTML = `
             <p><strong>Serviço:</strong> ${appointment.serviceType}</p>
-            <p><strong>Data e Hora:</strong> ${new Date(appointment.dateTime).toLocaleString()}</p>
-            <p><strong>Usuário:</strong> ${appointment.username}</p> <!-- Mostra o nome do usuário -->
+            <p><strong>Data e Hora:</strong> ${adjustToBrazilTime(appointment.dateTime)}h</p>
+            <p><strong>Usuário:</strong> ${appointment.username}</p>
             <button onclick="editAppointment('${appointment._id}')">Editar</button>
             <button onclick="deleteAppointment('${appointment._id}')">Excluir</button>
         `;
