@@ -111,7 +111,7 @@ async function loadAppointments(username) {
 
                 return `
                     <div>
-                        <p>${appointment.serviceType} - ${formattedDateTime} UTC</p>
+                        <p>${appointment.serviceType} - ${new Date(appointment.dateTime).toLocaleString()} UTC</p>
                         <button onclick="rescheduleAppointment('${appointment._id}')">Remarcar</button>
                         <button onclick="cancelAppointment('${appointment._id}')" style="background-color: rgb(112, 22, 22); color: white;">Cancelar</button></div>
 
