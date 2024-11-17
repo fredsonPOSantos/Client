@@ -58,13 +58,27 @@ function displayAppointments(appointments) {
         appointmentsContainer.innerHTML = '<p>Nenhum agendamento encontrado.</p>';
         return;
     }
+
     appointments.forEach(appointment => {
         const appointmentDiv = document.createElement('div');
         appointmentDiv.classList.add('appointment');
 
+        // Ajusta a data e hora para o fuso horário de Brasília (UTC-3)
+        const appointmentDate = new Date(appointment.dateTime);
+        appointmentDate.setHours(appointmentDate.getHours() + 3); // Adiciona 3 horas
+
+        // Formata a data e hora no padrão brasileiro
+        const formattedDate = appointmentDate.toLocaleString('pt-BR', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit',
+        });
+
         appointmentDiv.innerHTML = `
             <p><strong>Serviço:</strong> ${appointment.serviceType}</p>
-            <p><strong>Data e Hora:</strong> ${new Date(appointment.dateTime).toLocaleString()}</p>
+            <p><strong>Data e Hora:</strong> ${formattedDate}h</p>
             <p><strong>Usuário:</strong> ${appointment.username}</p> <!-- Mostra o nome do usuário -->
             <button onclick="editAppointment('${appointment._id}')">Editar</button>
             <button onclick="deleteAppointment('${appointment._id}')">Excluir</button>
@@ -73,6 +87,7 @@ function displayAppointments(appointments) {
         appointmentsContainer.appendChild(appointmentDiv);
     });
 }
+
 // Função para validar o horário do agendamento
 function validateAppointmentDate(dateTime) {
     const now = new Date();
