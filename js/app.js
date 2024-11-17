@@ -81,7 +81,17 @@ async function handleLogin() {
     }
     return username;
 }
-
+function adjustToBrazilTime(utcDateTime) {
+    const date = new Date(utcDateTime);
+    date.setHours(date.getHours() - date.getTimezoneOffset() / 60 + 3); // Ajusta para UTC-3
+    return date.toLocaleString('pt-BR', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+    });
+}
 // Função para carregar agendamentos de um usuário específico
 async function loadAppointments(username) {
     const token = localStorage.getItem('token');
@@ -99,31 +109,19 @@ async function loadAppointments(username) {
         if (appointments.length === 0) {
             appointmentsDiv.innerHTML = '<p>Você ainda não fez seu Agendamento, Por favor! Agende seu Serviço.</p>';
         } else {
-           appointmentsDiv.innerHTML = appointments.map(appointment => {
-                // Converte a data e hora para o formato brasileiro com "h" e horário UTC
-                const appointmentDate = new Date(appointment.dateTime);
-                const day = appointmentDate.getUTCDate().toString().padStart(2, '0');
-                const month = (appointmentDate.getUTCMonth() + 1).toString().padStart(2, '0');
-                const year = appointmentDate.getUTCFullYear();
-                const hour = appointmentDate.getUTCHours().toString().padStart(2, '0');
-                const minute = appointmentDate.getUTCMinutes().toString().padStart(2, '0');
-                const formattedDateTime = `${day}-${month}-${year} ${hour}:${minute}h`;
-
-                return `
-                    <div>
-                        <p>${appointment.serviceType} - ${new Date(appointment.dateTime).toLocaleString()} UTC</p>
-                        <button onclick="rescheduleAppointment('${appointment._id}')">Remarcar</button>
-                        <button onclick="cancelAppointment('${appointment._id}')" style="background-color: rgb(112, 22, 22); color: white;">Cancelar</button></div>
-
-                    </div>
-                `;
-            }).join('');
+            appointmentsDiv.innerHTML = appointments.map(appointment => `
+                <div>
+                    <p>${appointment.serviceType} - ${adjustToBrazilTime(appointment.dateTime)}</p>
+                    <button onclick="rescheduleAppointment('${appointment._id}')">Remarcar</button>
+                    <button onclick="cancelAppointment('${appointment._id}')" style="background-color: rgb(112, 22, 22); color: white;">Cancelar</button></div>
+            `).join('');
         }
     } catch (error) {
         console.error('Erro ao carregar os agendamentos:', error);
         alert('Erro ao carregar os agendamentos');
     }
 }
+
 // Registro de usuários
 document.getElementById('registerForm')?.addEventListener('submit', async (e) => {
     e.preventDefault();
