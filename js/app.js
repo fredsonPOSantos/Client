@@ -1,4 +1,5 @@
 const API_URL = 'https://api-agendamento-idb2.onrender.com/api' ;
+//https://api-agendamento-idb2.onrender.com/api
 
 // Função para verificar a URL atual
 function isDashboardPage() {
