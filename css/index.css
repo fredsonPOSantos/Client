@@ -287,6 +287,25 @@
       font-family: "Sanchez", sans-serif;
     
     }
+h1.cortamos.animate {
+      animation: animate 10s linear infinite; /* Animação para o h1 */
+  }
+  
+  @keyframes animate {
+      0% {
+          background-color: transparent;
+          color: initial;
+      }
+      50% {
+          background-color: #70533c;
+          color: rgb(240, 230, 230); /* Estado máximo */
+      }
+      100% {
+          background-color: transparent;
+          color: initial; /* Retorno ao estado inicial */
+      }
+  }
+  
     
     .sessao h3{
       max-height: 50px;
