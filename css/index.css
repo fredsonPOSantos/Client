@@ -289,6 +289,7 @@
     }
 h1.cortamos.animate {
       animation: animate 10s linear infinite; /* Animação para o h1 */
+      border-radius: 50px;
   }
   
   @keyframes animate {
