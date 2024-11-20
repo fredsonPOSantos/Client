@@ -41,11 +41,13 @@ body, ul, li, p, footer{
     /* Header */
 .header {
     background-color: var(--primary-color);
-    padding: 1.6rem;
+    padding: 2.55rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
+    border: #000000 1px solid;
+    border-bottom: none;
 
 }
 
@@ -196,26 +198,31 @@ display: flex;
 
 }
 
+
 .footer a, p{
 font-family: Arial, Helvetica, sans-serif;
 font-size: 1rem;
 color: #f8f4f0;
-letter-spacing: 0.8px;
+letter-spacing: 3px;
 
 }
 
 .footer h3{
 font-family: Georgia, 'Times New Roman', Times, serif;
-font-size: 1.1rem;;
+font-size: 1.1rem;
+letter-spacing: 4px;
+
 
 }
 #menu-footer{
   display: flex;
   justify-content: space-between;
-  padding: 30px;
+  padding: 5px;
   flex-wrap: wrap ;
-  background-color:#a67d5d;
   width: 100%;
+  background-color: #a67d5d;
+  border: #000000 1.5px solid;
+  border-top: none;
 }
 
 #menu-footer .footer-list-contatos{
@@ -232,6 +239,7 @@ font-size: 1.1rem;;
 .footer-list-contatos .footer-link{
  display: flex;
  justify-content: center;
+ padding: 10px;
 
 }
 .footer-list-serviços{
@@ -245,8 +253,12 @@ font-size: 1.1rem;;
 .footer-list-serviços .footer-link, h3{
   display: flex;
   justify-content: center;
-  padding: 7px;
+  padding: 10px;
 
+}
+
+ul.footer-list-serviços a.footer-link{
+  padding: 20px;
 }
 
 
@@ -265,7 +277,7 @@ text-align: center;
   
 font-size: 1rem;
 margin-top: -2px;
-padding: 5px;
+
 }
 
 #redes-sociais {
@@ -273,18 +285,18 @@ padding: 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  padding: 10px;
+  padding: 20px;
   gap: 1rem;
 }
 
 #redes-sociais .fa-whatsapp, #redes-sociais .fa-instagram{
   display: flex;
   justify-content: center;
-  padding: 0px;
   height: 100%;
   width: 100%;
   margin: 0;
   font-size: 50px;
+  padding: 20px;
 }
 
 .footer-link, .footer-link-redes a {
