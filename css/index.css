@@ -31,6 +31,10 @@
       display: block;
       max-width: 100%;
     }
+    img.logotipo{
+      width: 350px;
+      height: 350px;
+    }
     
     a{
       text-decoration: none;
@@ -48,6 +52,10 @@
      }
     .menu ul li a:hover::after {
       width: 100%;
+    }
+    header{
+      border: #000000 1px solid;
+      border-bottom: none;
     }
 
     #header-register {
@@ -70,6 +78,14 @@
       font-family: "Sour+Gummy", sans-serif;
       font-style: italic;
     }
+    main#teste-menu.teste-menu{
+    padding: 1.5rem;
+    }
+
+    body section.icones{
+    padding: 20px;
+    }
+
     #header-login:hover {
       transform: scale(1.2);
       color:#f8f4f0;;
@@ -498,6 +514,16 @@
       color: #3c3c3c;
       padding-left: 20px;
     }
+     div.local-base a p{
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      font-weight: bold;
+      font-family: "Sanchez", sans-serif;
+      color: #000000;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-right: 100px;
+    }
     
     .website h1{
       font-size: 1em;
@@ -568,17 +594,14 @@
       width: 150px;
       height: 150px;
       position: fixed;
-      top: 150px; /* Limite superior para não cobrir o header */
+      top: 200px; /* Limite superior para não cobrir o header */
       bottom: 100px; /* Limite inferior para não cobrir o footer */
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-left: 20px;
       z-index: 1000; /* Garante que o botão fique sobre outros elementos */
-      }
-    section#link-agende.link{
-
-      border-radius: 50%;
-    }
+      }   
 
     .glow-on-hover:before {
       content: '';
