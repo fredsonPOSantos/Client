@@ -41,16 +41,16 @@ body, ul, li, p, footer{
     /* Header */
 .header {
     background-color: var(--primary-color);
-    padding: 1.3rem;
+    padding: 2.59rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background-color: var(--primary-color);
-    padding: 1.6rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     width: 100%;
+    border: #000000 1px solid;
+    border-bottom: none;
 }
 
 .header button {
@@ -195,112 +195,120 @@ form button:hover {
 }
 
 .footer{
-display: flex;
-
-}
-
-.footer a, p{
+  display: flex;
+  
+  }
+  
+  
+  .footer a, p{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   color: #f8f4f0;
-  letter-spacing: 0.8px;
-}
-
-.footer h3{
+  letter-spacing: 3px;
+  
+  }
+  
+  .footer h3{
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 1.1rem;;
-
-}
-#menu-footer{
-  display: flex;
-  justify-content: space-between;
-  padding: 30px;
-  flex-wrap: wrap ;
-  background-color:#a67d5d;
-  width: 100%;
-}
-
-#menu-footer .footer-list-contatos{
-flex-direction: row ;
-flex: 0 1 33.33%;
-align-items: center;
-
-}
-.footer-list-contatos h3{
-
-text-align: center;
-}
-
-.footer-list-contatos .footer-link{
-display: flex;
-justify-content: center;
-
-}
-.footer-list-serviços{
-
-flex-direction: row ;
-flex: 0 1 33.33%;
-align-items:center;
-height: 100%;
-}
-.footer-list-serviços h3{
-text-align: center;
-
-}
-.footer-list-serviços .footer-link{
-display: flex;
-justify-content: center;
-padding: 7px;
-
-}
-
-
-.footer-list-redes{
-flex-direction: row ;
-flex: 0 1 33.33%;
-align-items: center;
-height: 100%;
-
-}
-.footer-list-redes h3 {
-text-align: center;
-}
-
-.footer-list-redes p {
-
-font-size: 1rem;
-margin-top: -2px;
-padding: 5px;
-}
-
-#redes-sociais {
-
-display: flex;
-flex-direction: row;
-justify-content: space-around;
-padding: 10px;
-gap: 1rem;
-}
-
-#redes-sociais .fa-whatsapp, #redes-sociais .fa-instagram{
-display: flex;
-justify-content: center;
-padding: 0px;
-height: 100%;
-width: 100%;
-margin: 0;
-font-size: 50px;
-}
-
-.footer-link, .footer-link-redes a {
-color: #333;
-text-decoration: none;
-transition: color 0.3s ease; /* Transição suave de cor */
-}
-
-.footer-link:hover, .footer-link-redes a:hover {
-color: #000000; /* Cor de destaque para o hover */
-}
+  font-size: 1.1rem;
+  letter-spacing: 4px;
+  
+  
+  }
+  #menu-footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    flex-wrap: wrap ;
+    width: 100%;
+    background-color: #a67d5d;
+    border: #000000 1.5px solid;
+    border-top: none;
+  }
+  
+  #menu-footer .footer-list-contatos{
+    flex-direction: row ;
+    flex: 0 1 33.33%;
+    align-items: center;
+  
+  }
+  .footer-list-contatos h3{
+    
+    text-align: center;
+  }
+  
+  .footer-list-contatos .footer-link{
+   display: flex;
+   justify-content: center;
+   padding: 10px;
+  
+  }
+  .footer-list-serviços{
+  
+    flex-direction: row ;
+    flex: 0 1 33.33%;
+    height: 100%;
+  }
+  
+  
+  .footer-list-serviços .footer-link, h3{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  
+  }
+  
+  ul.footer-list-serviços a.footer-link{
+    padding: 20px;
+  }
+  
+  
+  .footer-list-redes{
+    flex-direction: row ;
+    flex: 0 1 33.33%;
+    align-items: center;
+    height: 100%;
+  
+  }
+  .footer-list-redes h3 {
+  text-align: center;
+  }
+  
+  .footer-list-redes p {
+    
+  font-size: 1rem;
+  margin-top: -2px;
+  
+  }
+  
+  #redes-sociais {
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+    gap: 1rem;
+  }
+  
+  #redes-sociais .fa-whatsapp, #redes-sociais .fa-instagram{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-size: 50px;
+    padding: 20px;
+  }
+  
+  .footer-link, .footer-link-redes a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transição suave de cor */
+  }
+  
+  .footer-link:hover, .footer-link-redes a:hover {
+    color: #000000; /* Cor de destaque para o hover */
+  }
 .main-register {
 opacity: 0;
 transform: translateY(20px); /* Desliza levemente de baixo para cima */
