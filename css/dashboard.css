@@ -21,10 +21,8 @@
 body, ul, li, p, footer{
   margin: 0;
   padding: 0;
-  list-style: none;
-  
- }
- 
+  list-style: none;  
+ } 
 
 html, body{
   background-color: var(--background-color);
@@ -40,16 +38,17 @@ html, body{
 }
     /* Header */
     .header {
-      background-color: var(--primary-color);
-    padding: 1.3rem;
+    background-color: var(--primary-color);
+    padding: 2.3rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background-color: var(--primary-color);
     display: flex;
-    justify-content: space-between;
     align-items: center;
     width: 100%;
+    border: #000000 1px solid;
+    border-bottom: none;
       
   }
   
@@ -82,9 +81,9 @@ html, body{
       }
   
   .header button a:hover {
-    color:  #3c2f2f;
-      
+    color:  #000000;      
   }
+
  button a#home{
 
 width: 300px;
@@ -94,15 +93,12 @@ justify-content:center;
 margin-left: -82px;
 letter-spacing: 5px;
 font-weight: bold;
-
 }
 
 button a#btn-inicial{
-
 margin-right: -20px;
-
-
 }
+
 button a#home::after {
   content: "";
   position: absolute;
@@ -133,22 +129,22 @@ button a#home:hover::after {
 
 /* Efeito de destaque no botão "Sair" */
 .header #logoutButton:hover {
-    color: rgb(112, 22, 22); /* Altera a cor do texto */
-    border-color:rgb(112, 22, 22); /* Adiciona uma borda vermelha */
+    color: rgb(199, 27, 28); /* Altera a cor do texto */
+    border-color:rgb(199, 27, 28); /* Adiciona uma borda vermelha */
     transform: scale(1.1); /* Aumenta o tamanho do botão em 20% */
-    box-shadow: 0 0 10px rgb(112, 22, 22); /* Aplica uma leve sombra ao redor */
+    box-shadow: 0 0 10px rgb(199, 27, 28); /* Aplica uma leve sombra ao redor */
 }
 
-main{
+  main{
   display: flex;
   justify-content: space-evenly;
   padding: 10px;
- background-color: var(--background-color);
-height: 100vh;
-width: 100%;
-align-items: center;
-gap: 20px;
-}
+  background-color: var(--background-color);
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  gap: 20px;
+  }
 #appointmentForm{
   display: flex;
   flex-direction: column;
@@ -159,7 +155,7 @@ gap: 20px;
   width: 30%;
   height: 450px;
   justify-content: space-around;
-    margin-bottom: 3.5rem;
+  margin-bottom: 3.5rem;
 }
 
 #appointmentForm h2{
@@ -207,7 +203,6 @@ main button, select, input[type="date"] {
   font-family: "Sanchez", sans-serif;
 }
 
-
 #appointmentForm button:hover {
   background-color: green;
   color:  #ffffff;
@@ -226,8 +221,6 @@ flex-direction: column;
 justify-content: space-between;
 border-radius: 8px;
 box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-
-
 }
 
 #appointments {
@@ -239,15 +232,12 @@ box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   gap: 1rem;
   display: grid;
   grid: auto / auto auto;
- 
-
 }
+
 #appointments h2, #appointments h1, #appointments p{
   color: var(--secondary-color);
   font-size: 1rem;
   text-align: center;
-  
-
 }
 
 .appointments h3 {
@@ -255,9 +245,9 @@ box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   color: var(--secondary-color);
   text-align: center;
   transition: transform 0.4s, color 0.4s;
-  text-transform: uppercase;
- 
+  text-transform: uppercase; 
 }
+
 #appointments button{
   align-items: center;
   text-align: center;
@@ -266,14 +256,13 @@ box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   color: #25D366;
 }
 
-
 #appointments button:hover{
 
   background-color: green;
   color:  #ffffff;
   transform: scale(1.1);
-
 }
+
 /* Estilo adicional para responsividade */
 @media (max-width: 768px) {
   .container {
@@ -328,7 +317,6 @@ box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   color: #25D366;
 }
 
-
 @keyframes instagram {
   0% {color: #405DE6;}
   20% {color: #833AB4;}
@@ -336,110 +324,114 @@ box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   60% {color: #E1306C;}
   80% {color: #F56040;}
   100% {color: #F77737;}
-
 }
 
 .footer{
-  display: flex;
-
-  
-  }
+  display: flex;  
+  }  
   
   .footer a, p{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    color: #f8f4f0;
-    letter-spacing: 0.8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  color: #f8f4f0;
+  letter-spacing: 3px;  
   }
   
   .footer h3{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.1rem;;
-  
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.1rem;
+  letter-spacing: 4px;
   }
+
   #menu-footer{
     display: flex;
     justify-content: space-between;
-    padding: 30px;
+    padding: 5px;
     flex-wrap: wrap ;
-    background-color:#a67d5d;
     width: 100%;
+    background-color: #a67d5d;
+    border: #000000 1.5px solid;
+    border-top: none;
   }
   
   #menu-footer .footer-list-contatos{
-  flex-direction: row ;
-  flex: 0 1 33.33%;
-  align-items: center;
-  
+    flex-direction: row ;
+    flex: 0 1 33.33%;
+    align-items: center;  
   }
-  .footer-list-contatos h3{
-  
-  text-align: center;
+
+  .footer-list-contatos h3{    
+    text-align: center;
   }
   
   .footer-list-contatos .footer-link{
-  display: flex;
-  justify-content: center;
+   display: flex;
+   justify-content: center;
+   padding: 10px;
   
   }
-  .footer-list-serviços{
-  
-  flex-direction: row ;
-  flex: 0 1 33.33%;
-  align-items:center;
-  height: 100%;
+  .footer-list-serviços{  
+    flex-direction: row ;
+    flex: 0 1 33.33%;
+    height: 100%;
   }
-  .footer-list-serviços h3{
-  text-align: center;
+  
+  
+  .footer-list-serviços .footer-link, h3{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
   
   }
-  .footer-list-serviços .footer-link{
-  display: flex;
-  justify-content: center;
-  padding: 7px;
   
+  ul.footer-list-serviços a.footer-link{
+    padding: 20px;
   }
   
   
   .footer-list-redes{
-  flex-direction: row ;
-  flex: 0 1 33.33%;
-  align-items: center;
-  height: 100%;
+    flex-direction: row ;
+    flex: 0 1 33.33%;
+    align-items: center;
+    height: 100%;
   
   }
   .footer-list-redes h3 {
   text-align: center;
   }
   
-  .footer-list-redes p {
-  
+  .footer-list-redes p {    
   font-size: 1rem;
-  margin-top: -2px;
-  padding: 5px;
+  margin-top: -2px;  
   }
   
-  #redes-sociais {
-  
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 10px;
-  gap: 1rem;
+  #redes-sociais {  
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+    gap: 1rem;
   }
   
   #redes-sociais .fa-whatsapp, #redes-sociais .fa-instagram{
-  display: flex;
-  justify-content: center;
-  padding: 0px;
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  font-size: 50px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-size: 50px;
+    padding: 20px;
   }
+  
+  .footer-link, .footer-link-redes a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Transição suave de cor */
+  }
+  
   .footer-link:hover, .footer-link-redes a:hover {
     color: #000000; /* Cor de destaque para o hover */
-    }
+  }
     .main-dashboard {
       opacity: 0;
       transform: translateY(20px); /* Desliza levemente de baixo para cima */
