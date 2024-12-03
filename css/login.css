@@ -49,6 +49,7 @@ body, ul, li, p, footer{
     border: #000000 1px solid;
     border-bottom: none;
 
+
 }
 
 .header button {
@@ -317,4 +318,133 @@ margin-top: -2px;
 .main-login.loaded {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+
+
+
+  .header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+  }
+
+  .main-login {
+      padding: 1rem;
+  }
+
+  form#loginForm {
+      width: 100%;
+      max-width: 320px;
+  }
+
+  .footer {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+  #menu-footer {
+    flex-direction: column;
+    gap: 15px;
+}
+
+}
+
+@media (max-width: 768px) {
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#menu-footer {
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-list-serviços, .footer-list-redes {
+    width: 100%;
+}
+
+.footer-list-serviços h3, .footer-list-redes h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.footer-list-serviços li, .footer-list-redes li {
+    margin-bottom: 8px;
+}
+
+#redes-sociais {
+    flex-direction: column;
+    gap: 10px;
+}
+
+#redes-sociais .fab {
+    font-size: 40px; /* Ajuste o tamanho do ícone para telas menores */
+}
+
+.footer-link-redes p {
+    font-size: 0.9rem;
+}
+
+  .header {
+      padding: 0.5rem;
+  }
+
+  .load-img {
+      width: 150px;
+      height: 150px;
+  }
+
+  .footer h3 {
+      font-size: 1rem;
+  }
+
+  #redes-sociais .fa-whatsapp, #redes-sociais .fa-instagram {
+      font-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+      padding: 0.5rem;
+      flex-direction: column;
+  }
+
+  form#loginForm {
+      padding: 1rem;
+  }
+
+  .load-img {
+      width: 120px;
+      height: 120px;
+  }
+
+  .footer {
+      padding: 0.5rem;
+  }
+
+  #redes-sociais .fa-whatsapp, #redes-sociais .fa-instagram {
+      font-size: 30px;
+  }
+
+  .footer-list-serviços, .footer-list-redes {
+    text-align: center;
+}
+
+.footer-list-serviços h3, .footer-list-redes h3 {
+    font-size: 1.9rem;
+}
+
+#redes-sociais .fab {
+    font-size: 30px; /* Ícones ainda menores para telas pequenas */
+}
+
+.footer-link-redes p {
+    font-size: 1.5rem;
+}
 }
