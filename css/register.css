@@ -319,3 +319,91 @@ transition: opacity 0.5s ease-out, transform 0.8s ease-out;
 opacity: 1;
 transform: translateY(0);
 }
+
+/* Responsividade */
+@media (max-width: 768px) {
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+  #menu-footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+.footer-list-contatos, 
+.footer-list-serviços, 
+.footer-list-redes {
+    flex: 1 1 auto;
+    width: 100%;
+}
+
+#redes-sociais {
+    gap: 20px;
+}
+  .header {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .header button {
+      margin-bottom: 10px;
+  }
+
+  #menu-footer {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+  }
+
+  form {
+      padding: 15px;
+  }
+
+  form h1 {
+      font-size: 1.25rem;
+  }
+
+  form button {
+      font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .footer-list-contatos h3,
+  .footer-list-serviços h3,
+  .footer-list-redes h3 {
+      font-size: 1rem;
+  }
+
+  #redes-sociais .fa-whatsapp, 
+  #redes-sociais .fa-instagram {
+      font-size: 30px;
+  }
+
+  .header {
+      flex-direction: column;
+      padding: 10px;
+  }
+
+  #menu-footer {
+      gap: 5px;
+  }
+
+  .footer h3 {
+      font-size: 1rem;
+  }
+
+  form h1 {
+      font-size: 1rem;
+  }
+
+  form button {
+      font-size: 0.85rem;
+  }
+}
