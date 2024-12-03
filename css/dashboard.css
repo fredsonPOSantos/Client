@@ -21,8 +21,10 @@
 body, ul, li, p, footer{
   margin: 0;
   padding: 0;
-  list-style: none;  
- } 
+  list-style: none;
+  
+ }
+ 
 
 html, body{
   background-color: var(--background-color);
@@ -65,6 +67,7 @@ html, body{
       color: #fff;
       transition: transform 0.3s ease, color 0.3s ease;
       
+      
 
   }
   .header button:hover {
@@ -81,9 +84,9 @@ html, body{
       }
   
   .header button a:hover {
-    color:  #000000;      
+    color:  #000000;
+      
   }
-
  button a#home{
 
 width: 300px;
@@ -93,12 +96,15 @@ justify-content:center;
 margin-left: -82px;
 letter-spacing: 5px;
 font-weight: bold;
+
 }
 
 button a#btn-inicial{
-margin-right: -20px;
-}
 
+margin-right: -20px;
+
+
+}
 button a#home::after {
   content: "";
   position: absolute;
@@ -135,16 +141,24 @@ button a#home:hover::after {
     box-shadow: 0 0 10px rgb(199, 27, 28); /* Aplica uma leve sombra ao redor */
 }
 
-  main{
+.hamburger {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+main{
   display: flex;
   justify-content: space-evenly;
   padding: 10px;
-  background-color: var(--background-color);
-  height: 100vh;
-  width: 100%;
-  align-items: center;
-  gap: 20px;
-  }
+ background-color: var(--background-color);
+height: 100vh;
+width: 100%;
+align-items: center;
+gap: 20px;
+}
 #appointmentForm{
   display: flex;
   flex-direction: column;
@@ -155,7 +169,7 @@ button a#home:hover::after {
   width: 30%;
   height: 450px;
   justify-content: space-around;
-  margin-bottom: 3.5rem;
+    margin-bottom: 3.5rem;
 }
 
 #appointmentForm h2{
@@ -203,6 +217,7 @@ main button, select, input[type="date"] {
   font-family: "Sanchez", sans-serif;
 }
 
+
 #appointmentForm button:hover {
   background-color: green;
   color:  #ffffff;
@@ -232,12 +247,15 @@ box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   gap: 1rem;
   display: grid;
   grid: auto / auto auto;
-}
+ 
 
+}
 #appointments h2, #appointments h1, #appointments p{
   color: var(--secondary-color);
   font-size: 1rem;
   text-align: center;
+  
+
 }
 
 .appointments h3 {
@@ -245,9 +263,9 @@ box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   color: var(--secondary-color);
   text-align: center;
   transition: transform 0.4s, color 0.4s;
-  text-transform: uppercase; 
+  text-transform: uppercase;
+ 
 }
-
 #appointments button{
   align-items: center;
   text-align: center;
@@ -256,13 +274,14 @@ box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   color: #25D366;
 }
 
+
 #appointments button:hover{
 
   background-color: green;
   color:  #ffffff;
   transform: scale(1.1);
-}
 
+}
 /* Estilo adicional para responsividade */
 @media (max-width: 768px) {
   .container {
@@ -317,6 +336,7 @@ box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   color: #25D366;
 }
 
+
 @keyframes instagram {
   0% {color: #405DE6;}
   20% {color: #833AB4;}
@@ -324,25 +344,30 @@ box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   60% {color: #E1306C;}
   80% {color: #F56040;}
   100% {color: #F77737;}
+
 }
 
 .footer{
-  display: flex;  
-  }  
+  display: flex;
+  
+  }
+  
   
   .footer a, p{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   color: #f8f4f0;
-  letter-spacing: 3px;  
+  letter-spacing: 3px;
+  
   }
   
   .footer h3{
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 1.1rem;
   letter-spacing: 4px;
+  
+  
   }
-
   #menu-footer{
     display: flex;
     justify-content: space-between;
@@ -357,10 +382,11 @@ box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   #menu-footer .footer-list-contatos{
     flex-direction: row ;
     flex: 0 1 33.33%;
-    align-items: center;  
+    align-items: center;
+  
   }
-
-  .footer-list-contatos h3{    
+  .footer-list-contatos h3{
+    
     text-align: center;
   }
   
@@ -370,7 +396,8 @@ box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
    padding: 10px;
   
   }
-  .footer-list-serviços{  
+  .footer-list-serviços{
+  
     flex-direction: row ;
     flex: 0 1 33.33%;
     height: 100%;
@@ -400,12 +427,15 @@ box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
   }
   
-  .footer-list-redes p {    
+  .footer-list-redes p {
+    
   font-size: 1rem;
-  margin-top: -2px;  
+  margin-top: -2px;
+  
   }
   
-  #redes-sociais {  
+  #redes-sociais {
+  
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -442,3 +472,217 @@ box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
       opacity: 1;
       transform: translateY(0);
       }
+
+      /* Responsividade para telas menores que 1024px */
+@media (max-width: 1024px) {
+  .header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .header button {
+    font-size: 0.9rem;
+    width: auto;
+    padding: 0.5rem;
+  }
+
+  button a#home {
+    margin-left: 0;
+    letter-spacing: 3px;
+  }
+
+  main {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  #appointmentForm {
+    width: 90%;
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  #appointments {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .appointments h3 {
+    font-size: 1rem;
+  }
+
+  #appointments h2, #appointments h1, #appointments p {
+    font-size: 0.9rem;
+  }
+
+  #appointments button {
+    font-size: 0.8rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  #menu-footer {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .footer-list-contatos,
+  .footer-list-serviços,
+  .footer-list-redes {
+    flex: 1;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  #redes-sociais {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #redes-sociais .fa-whatsapp, #redes-sociais .fa-instagram {
+    font-size: 40px;
+    padding: 10px;
+  }
+}
+
+/* Responsividade para telas menores que 768px */
+@media (max-width: 768px) {
+  .header {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    align-items:center;
+    text-align: center;
+    gap: 1rem;
+    padding: 2.5rem;
+   
+  }
+
+  header button {
+    padding: 12px;
+    font-size: 20px; /* Aumenta ainda mais o tamanho da fonte para botões em telas muito pequenas */
+    margin-bottom: 12px; /* Aumenta o espaçamento entre os botões */
+}
+
+header button a {
+  font-size: 18px;
+  text-align: center; /* Aumenta o tamanho do link */
+}
+
+
+button a#home, a#logoutButton, a#btn-inicial {
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 20px; /* Tamanho maior para melhor leitura */
+}
+}
+  main {
+    padding: 15px;
+  }
+
+  #appointmentForm h2 {
+    font-size: 1.4rem;
+  }
+
+  label, select, input[type="date"], button {
+    font-size: 0.9rem;
+  }
+
+  #appointments {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    padding: 0.8rem;
+  }
+
+  #menu-footer {
+    padding: 0.5rem;
+  }
+
+  #redes-sociais {
+    gap: 0.8rem;
+  }
+
+  #redes-sociais .fa-whatsapp, #redes-sociais .fa-instagram {
+    font-size: 35px;
+  }
+
+
+/* Responsividade para telas menores que 480px */
+@media (max-width: 480px) {
+  .header {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    align-items:center;
+    text-align: center;
+    gap: 1rem;
+    padding: 2.5rem;
+   
+  }
+
+  header button {
+    padding: 12px;
+    font-size: 20px; /* Aumenta ainda mais o tamanho da fonte para botões em telas muito pequenas */
+    margin-bottom: 12px; /* Aumenta o espaçamento entre os botões */
+}
+  header button a {
+  font-size: 18px;
+  text-align: center; /* Aumenta o tamanho do link */
+}
+
+  button a#home, a#logoutButton, a#btn-inicial {
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 20px; /* Tamanho maior para melhor leitura */
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  #appointmentForm {
+    width: 100%;
+    padding: 0.8rem;
+  }
+
+  #appointmentForm h2 {
+    font-size: 1.2rem;
+  }
+
+  label, select, input[type="date"], button {
+    font-size: 0.8rem;
+  }
+
+  #appointments h2, #appointments h1, #appointments p {
+    font-size: 0.8rem;
+  }
+
+  .footer {
+    padding: 0.5rem;
+  }
+
+  #menu-footer {
+    padding: 0.5rem;
+  }
+
+  #redes-sociais .fa-whatsapp, #redes-sociais .fa-instagram {
+    font-size: 30px;
+  }
+}
