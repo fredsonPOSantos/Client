@@ -32,15 +32,20 @@
                 
               </section>
                    
-            <div class="menu">
-              <ul>
-               <li><a href="#">Home</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#presents">Nosso Trabalho</a></li>
-                <li><a href="register.html" id="header-register">Cadastre-se</a></li>
-                <li><a href="login.html" id="header-login">Entrar</a></li>
-              </ul>
+              <div class="menu">
+                <ul id="menu-items">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#presents">Nosso Trabalho</a></li>
+                    <li><a href="register.html" id="header-register">Cadastre-se</a></li>
+                    <li><a href="login.html" id="header-login">Entrar</a></li>
+                </ul>
+                <!-- Botão de menu hambúrguer -->
+                <button class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i> <!-- Ícone do Font Awesome -->
+                </button>
             </div>
+            
          
         </main>
     
@@ -134,7 +139,10 @@
           </div>
 
           <p>© Todos os direitos reservados.</p>
-         
+          
+          <div class="local-base">
+          <a href="https://barbeariagnese.tawk.help/"><p>Base de Conhecimento</p></a>
+        </div>
         </footer>
       
         <div id="pre" class="preloader">
@@ -153,17 +161,56 @@
     </script>
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/673152e72480f5b4f59b724a/1iccanmbi';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+  (function(){
+  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+  s1.async=true;
+  s1.src='https://embed.tawk.to/673152e72480f5b4f59b724a/1iccanmbi';
+  s1.charset='UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1,s0);
+  })();
+
+  // Seleciona o botão e os itens do menu
+  const hamburger = document.getElementById('hamburger');
+  const menuItems = document.getElementById('menu-items');
+
+  // Adiciona evento de clique ao botão
+  hamburger.addEventListener('click', () => {
+  menuItems.classList.toggle('active'); // Alterna a classe 'active'
+  });
+
+  // Seleciona o botão
+  const button = document.querySelector('.glow-on-hover');
+  
+  // Variável para verificar quando o usuário parou de rolar
+  let isScrolling;
+
+  // Adiciona evento de rolagem da página
+  window.addEventListener('scroll', function() {
+    // Calcula a opacidade com base na rolagem
+    let scrollPosition = window.scrollY; // Pega a posição atual da rolagem
+    let opacity = 1 - scrollPosition / 500; // Opacidade diminui conforme o usuário rola
+
+    // Garante que a opacidade não fique abaixo de 0
+    if (opacity < 0) opacity = 0;
+
+    // Aplica a opacidade ao botão
+    button.style.opacity = opacity;
+
+    // Limpa o tempo de espera de rolagem anterior
+    window.clearTimeout(isScrolling);
+
+    // Define um novo timeout para detectar quando a rolagem parar
+    isScrolling = setTimeout(function() {
+      // Quando a rolagem parar, a opacidade volta a 1
+      button.style.opacity = 1;
+    }, 66); // Um pequeno atraso de 66ms para detectar o fim da rolagem
+  });
+
+  </script>
+  <!--End of Tawk.to Script-->
+  
     
 </body>
 </html>
