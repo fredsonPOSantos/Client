@@ -1,116 +1,450 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/login.css">
-    <script src="js/app.js" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Sanchez&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link rel="shortcut icon" href="./imagens/G.png" type="image/x-icon">
+/* RESETS */
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Sanchez&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
 
-    <title>Login</title>
-</head>
+:root {
+    --background-color: #f8f4f0; /* Marrom claro, quase branco */
+    --primary-color: #a67d5d; /* Marrom principal */
+    --secondary-color: #3c2f2f; /* Marrom mais escuro */
+    --text-color: #3c3c3c;
+    --button-hover: #8b5e3c;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Sanchez', sans-serif;
+}
 
-
-<body>
-    <header class="header">
-        
-        <button class="btn-inicial"><a href="./index.html">Página Inicial</a></button>
-        <button class="btn-cadastrese"><a href="./register.html">Cadastre-se</a></button>
-    
-    </header>
-
-
-    <main class="main-login">
-        <form id="loginForm"> <!-- Adicionei o ID aqui -->
-            <h1>Login</h1>
-            <input type="text" id="username" placeholder="Nome de Usuário" required>
-            <input type="password" id="password" placeholder="Senha" required>
-            <button type="submit">Entrar</button>
-        </form>
-    </main>
-    
-    <footer class="footer">
-
-    <div id="menu-footer">
-       
-            <ul class="footer-list-contatos">
-        
-                <li><h3>Telefone</h3></li>
-                <li><a href="#" class="footer-link">(+55) 73991369741</a></li>
-
-                <li><h3>Email</h3></li>
-                <li><a href="#" class="footer-link">contato@barbeariageneses.com</a></li>
-
-                <li><h3>Nosso Endereço</h3></li>
-                <li><a href="#" class="footer-link">Avenida Centenario, N° 123, Gandu-BA</a></li>
-            </ul>
-
-            <ul class="footer-list-serviços" >
-
-                <li><h3>Sobre a Barbearia</h3></li>
-                <li><a href="#" class="footer-link">Outros Serviços</a></li>
-                <li><a href="#" class="footer-link">Nosso Trabalho</a></li>
-                <li><a href="#" class="footer-link">Projetos Sociais</a></li>
-
-            </ul>
-
-           
-            <ul class="footer-list-redes">
-
-                <li><h3>Redes Sociais</h3></li>
-                
-                <div id="redes-sociais">
-
-                    <div id="fa-whatsapp">
-                    <li><p>W h a t s a p p</p></li>
-                    <li class="footer-link-redes"><a href="https://wa.me//5573991369741" target="_blank" data-anime="left"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></a></li>
-                    </div>    
-                
-                    <div id="instagram">
-                    <li><p>I n s t a g r a m</p></li>
-                    <li class="footer-link-redes"><a href="https://www.instagram.com/barbeariagenesis11/" target="_blank" 
-                    data-anime="left"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-                    </div>  
-                    
-                </div>
-            </ul> 
-            
-    </div>
-      
-</footer>    
-    
-    <div id="pre" class="preloader">
-        <img class="load-img" src="./imagens/Gênese teste 2.png" alt="loading">
-        <div id="load" class="load"></div>
-    </div>
-       
-    <script src="./script/script.js"></script>    
-    <script src="./script/main.js"></script> 
-    <script src="./script/login.js"></script> 
+body, ul, li, p, footer{
+ margin: 0;
+ padding: 0;
+ list-style: none;
+ 
+}
 
     
-    <script>
-        $(window).on("load", function(){
-          $(".preloader").fadeOut("slow");
-      })
-    </script>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/673152e72480f5b4f59b724a/1iccanmbi';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+    html, body{
+        background-color: var(--background-color);
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        color: var(--text-color);
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Sanchez', sans-serif;
 
-</body>
-</html>
+    }
+
+    /* Header */
+.header {
+    background-color: var(--primary-color);
+    padding: 2.55rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    border: #000000 1px solid;
+    border-bottom: none;
+
+
+}
+
+.header button {
+    background: none;
+    border: none;
+    color: #0a0a0a;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+
+}
+.header button:hover {
+   
+  transform: scale(1.2); /* Aumenta o tamanho do botão em 10% */
+}
+
+.header button a {
+    color: #f8f4f0;
+    text-decoration: none;
+    transition: color 0.3s;
+    text-transform: uppercase;
+    font-family: "Sanchez", sans-serif;
+}
+
+.header button a:hover {
+    color:  #3c2f2f;
+}
+.main-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form#loginForm {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    font-size: 1rem;
+    
+}
+
+form h1 {
+    font-family: 'Bungee Shade', cursive;
+    color: var(--secondary-color);
+    margin-bottom: 3.5rem;
+    
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+form button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: #f8f4f0;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    transition: transform 0.3s, color 0.3s;
+    text-transform: uppercase;
+    font-family: "Sanchez", sans-serif;
+}
+
+form button:hover {
+    background-color: green;
+    color:  #ffffff;
+    transform: scale(1.1);
+
+}
+   
+
+    .preloader{
+      background-color: #3c2f2f;
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .load-img{
+      width: 300px;
+      height: 300px;
+      position: fixed;
+      border-radius: 50%; /* Torna a imagem redonda */
+      object-fit: cover; /* Garante que a imagem preencha o círculo sem distorções */
+      border: 2px solid var(--primary-color); /* Opcional: adiciona uma borda */
+    }
+    .load{
+      width: 320px;
+      height: 320px;
+      border: 10px solid #a67d5d;
+      border-top-color: #f8f4f0;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      to {transform: rotate(360deg)}
+    }
+  
+  .fa-instagram:hover{
+    animation-name: instagram;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  
+  .fa-whatsapp:hover{
+    color: #25D366;
+  }
+  
+  
+  @keyframes instagram {
+    0% {color: #405DE6;}
+    20% {color: #833AB4;}
+    40% {color: #C13584;}
+    60% {color: #E1306C;}
+    80% {color: #F56040;}
+    100% {color: #F77737;}
+  
+  }
+
+.footer{
+display: flex;
+
+}
+
+
+.footer a, p{
+font-family: Arial, Helvetica, sans-serif;
+font-size: 1rem;
+color: #f8f4f0;
+letter-spacing: 3px;
+
+}
+
+.footer h3{
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: 1.1rem;
+letter-spacing: 4px;
+
+
+}
+#menu-footer{
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  flex-wrap: wrap ;
+  width: 100%;
+  background-color: #a67d5d;
+  border: #000000 1.5px solid;
+  border-top: none;
+}
+
+#menu-footer .footer-list-contatos{
+  flex-direction: row ;
+  flex: 0 1 33.33%;
+  align-items: center;
+
+}
+.footer-list-contatos h3{
+  
+  text-align: center;
+}
+
+.footer-list-contatos .footer-link{
+ display: flex;
+ justify-content: center;
+ padding: 10px;
+
+}
+.footer-list-serviços{
+
+  flex-direction: row ;
+  flex: 0 1 33.33%;
+  height: 100%;
+}
+
+
+.footer-list-serviços .footer-link, h3{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+
+}
+
+ul.footer-list-serviços a.footer-link{
+  padding: 20px;
+}
+
+
+.footer-list-redes{
+  flex-direction: row ;
+  flex: 0 1 33.33%;
+  align-items: center;
+  height: 100%;
+
+}
+.footer-list-redes h3 {
+text-align: center;
+}
+
+.footer-list-redes p {
+  
+font-size: 1rem;
+margin-top: -2px;
+
+}
+
+#redes-sociais {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 20px;
+  gap: 1rem;
+}
+
+#redes-sociais .fa-whatsapp, #redes-sociais .fa-instagram{
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-size: 50px;
+  padding: 20px;
+}
+
+.footer-link, .footer-link-redes a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease; /* Transição suave de cor */
+}
+
+.footer-link:hover, .footer-link-redes a:hover {
+  color: #000000; /* Cor de destaque para o hover */
+}
+.main-login {
+  opacity: 0;
+  transform: translateY(20px); /* Desliza levemente de baixo para cima */
+  transition: opacity 0.5s ease-out, transform 0.8s ease-out;
+}
+
+.main-login.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+
+
+
+  .header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1rem;
+  }
+
+  .main-login {
+      padding: 1rem;
+  }
+
+  form#loginForm {
+      width: 100%;
+      max-width: 320px;
+  }
+
+  .footer {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+  #menu-footer {
+    flex-direction: column;
+    gap: 15px;
+}
+
+}
+
+@media (max-width: 768px) {
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#menu-footer {
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-list-serviços, .footer-list-redes {
+    width: 100%;
+}
+
+.footer-list-serviços h3, .footer-list-redes h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.footer-list-serviços li, .footer-list-redes li {
+    margin-bottom: 8px;
+}
+
+#redes-sociais {
+    flex-direction: column;
+    gap: 10px;
+}
+
+#redes-sociais .fab {
+    font-size: 40px; /* Ajuste o tamanho do ícone para telas menores */
+}
+
+.footer-link-redes p {
+    font-size: 0.9rem;
+}
+
+  .header {
+      padding: 0.5rem;
+  }
+
+  .load-img {
+      width: 150px;
+      height: 150px;
+  }
+
+  .footer h3 {
+      font-size: 1rem;
+  }
+
+  #redes-sociais .fa-whatsapp, #redes-sociais .fa-instagram {
+      font-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+      padding: 0.5rem;
+      flex-direction: column;
+  }
+
+  form#loginForm {
+      padding: 1rem;
+  }
+
+  .load-img {
+      width: 120px;
+      height: 120px;
+  }
+
+  .footer {
+      padding: 0.5rem;
+  }
+
+  #redes-sociais .fa-whatsapp, #redes-sociais .fa-instagram {
+      font-size: 30px;
+  }
+
+  .footer-list-serviços, .footer-list-redes {
+    text-align: center;
+}
+
+.footer-list-serviços h3, .footer-list-redes h3 {
+    font-size: 1.9rem;
+}
+
+#redes-sociais .fab {
+    font-size: 30px; /* Ícones ainda menores para telas pequenas */
+}
+
+.footer-link-redes p {
+    font-size: 1.5rem;
+}
+}
